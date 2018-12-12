@@ -1,0 +1,22 @@
+<form name="myForm" method="post">
+  <div class="">
+    <label>Nom</label><input type="text" name="name" ng-model="name" ng-pattern="/^[a-zA-Z-]+$/">
+    <div class="valid" ng-show="myForm.name.$valid">Nom valide</div>
+    <div class="invalid" ng-show="myForm.name.$error.pattern">Nom non invalide</div>
+  </div>
+  <div class="">
+    <label>E-mail</label><input ng-model="email" type="email" name="email">
+    <div class="valid" ng-show="myForm.email.$valid">Adresse valide</div>
+    <div class="invalid" ng-show="myForm.email.$error.email">Adresse invalide</div>
+  </div>
+  <div class="">
+    <label>Sujet</label><input ng-model="sujet" required type="text" name="sujet" value="">
+  </div>
+  <div class="">
+    <label>Texte</label><textarea ng-model="texte" required name="texte" rows="8" cols="80"></textarea>
+  </div>
+    <button type="button" name="button" ng-click="send()">Envoyer</button>
+</form>
+<ul>
+  <li ng-repeat="subject in subjectList"><a href="#!/resultat/{{$index}}">{{subject}}</a></li>
+</ul>
